@@ -1,0 +1,1223 @@
+/* Charts and Analytics Styles */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+  margin-bottom: 3rem;
+}
+
+.chart-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.chart-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.chart-card h3 {
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.chart-card canvas {
+  max-height: 300px;
+}
+
+/* Event Details Styles */
+.back-nav {
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  background-color: var(--card-bg);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.event-detail-container {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.event-image {
+  width: 200px;
+  height: 150px;
+  background-color: var(--primary-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-category {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.event-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.event-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-light);
+}
+
+.event-description {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.event-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn-large {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--light);
+  color: var(--text);
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: white;
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  color: white;
+}
+
+/* RSVP Section */
+.rsvp-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--light);
+  border-radius: 10px;
+}
+
+.rsvp-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.rsvp-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rsvp-btn.active {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+.attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* Volunteer Section */
+.volunteer-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--light);
+  border-radius: 10px;
+}
+
+.volunteer-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.role-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.role-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.role-description {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.volunteer-list {
+  margin-top: 1rem;
+}
+
+.volunteer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.volunteer-name {
+  color: var(--text);
+}
+
+.volunteer-join {
+  padding: 0.3rem 0.8rem;
+  background-color: var(--success);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Poll Section */
+.poll-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--light);
+  border-radius: 10px;
+}
+
+.poll-options {
+  margin: 1.5rem 0;
+}
+
+.poll-option {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.poll-option:hover {
+  border-color: var(--primary);
+}
+
+.poll-option.selected {
+  border-color: var(--primary);
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+.poll-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.poll-text {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.poll-percentage {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.poll-bar {
+  height: 6px;
+  background-color: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.poll-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.poll-votes {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* Idea Board */
+.idea-board {
+  margin: 2rem 0;
+}
+
+.idea-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.idea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.idea-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.idea-meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.idea-description {
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.idea-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.upvote-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.4rem 0.8rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upvote-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.upvote-count {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Resource Exchange */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.resource-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+.resource-type {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--success);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.resource-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.resource-description {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.resource-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Calendar View */
+.calendar-view {
+  margin: 2rem 0;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-day {
+  background-color: var(--card-bg);
+  padding: 0.5rem;
+  min-height: 100px;
+  font-size: 0.9rem;
+}
+
+.calendar-day.header {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.8rem 0.5rem;
+}
+
+.calendar-date {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-event {
+  background-color: var(--primary-light);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+/* Responsive Charts */
+@media (max-width: 768px) {
+  .analytics-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .chart-card {
+      padding: 1rem;
+  }
+  
+  .event-header {
+      flex-direction: column;
+  }
+  
+  .event-image {
+      width: 100%;
+      height: 200px;
+  }
+  
+  .rsvp-options {
+      flex-direction: column;
+  }
+  
+  .volunteer-roles {
+      grid-template-columns: 1fr;
+  }
+  
+  .calendar-grid {
+      grid-template-columns: repeat(7, 1fr);
+      font-size: 0.8rem;
+  }
+  
+  .calendar-day {
+      min-height: 80px;
+      padding: 0.3rem;
+  }
+}
+
+/* Add to css/charts.css */
+.section-header {
+  margin: 3rem 0 1.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: var(--text-light);
+}
+
+/* Idea Board Styles */
+.idea-board, .resource-exchange, .calendar-section {
+  margin: 3rem 0;
+}
+
+.idea-actions, .resource-actions {
+  margin-bottom: 1.5rem;
+}
+
+.ideas-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.idea-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px var(--shadow);
+  border-left: 4px solid var(--primary);
+}
+
+.idea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.idea-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.idea-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+.idea-description {
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.idea-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.upvote-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upvote-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.upvote-count {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Resource Grid */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px var(--shadow);
+  border-top: 4px solid var(--success);
+}
+
+.resource-type {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--success);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.resource-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.resource-description {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.resource-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact-btn {
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Calendar Styles */
+.calendar-view {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-day {
+  background: var(--bg);
+  padding: 0.8rem;
+  min-height: 100px;
+  font-size: 0.9rem;
+}
+
+.calendar-day.header {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.calendar-date {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-event {
+  background: var(--primary-light);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+/* Modal Styles */
+.large-modal {
+  max-width: 800px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* RSVP Styles */
+.rsvp-section {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--light);
+  border-radius: 10px;
+}
+
+.rsvp-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rsvp-btn {
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rsvp-btn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* Poll Styles */
+.poll-section {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--light);
+  border-radius: 10px;
+}
+
+.poll-options {
+  margin: 1.5rem 0;
+}
+
+.poll-option {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.poll-option:hover {
+  border-color: var(--primary);
+}
+
+.poll-option.selected {
+  border-color: var(--primary);
+  background: rgba(67, 97, 238, 0.1);
+}
+
+.poll-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.poll-text {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.poll-percentage {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.poll-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.poll-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.poll-votes {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* Volunteer Styles */
+.volunteer-section {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--light);
+  border-radius: 10px;
+}
+
+.volunteer-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.role-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.role-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.role-description {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.volunteer-list {
+  margin-top: 1rem;
+}
+
+.volunteer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.volunteer-name {
+  color: var(--text);
+}
+
+.volunteer-join {
+  padding: 0.3rem 0.8rem;
+  background: var(--success);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-nav {
+      display: none;
+  }
+  
+  .resource-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .calendar-grid {
+      grid-template-columns: repeat(7, 1fr);
+      font-size: 0.8rem;
+  }
+  
+  .calendar-day {
+      min-height: 80px;
+      padding: 0.5rem;
+  }
+  
+  .rsvp-options {
+      flex-direction: column;
+  }
+  
+  .volunteer-roles {
+      grid-template-columns: 1fr;
+  }
+}
+/* Calendar Styles */
+.calendar-section {
+  margin: 3rem 0;
+}
+
+.countdown-timer {
+  margin-bottom: 2rem;
+}
+
+.countdown-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px var(--shadow);
+  text-align: center;
+}
+
+.countdown-card h4 {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-event {
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1rem;
+}
+
+.calendar-view {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.calendar-header h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-day {
+  background: var(--bg);
+  padding: 0.8rem;
+  min-height: 100px;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.calendar-day.header {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  min-height: auto;
+}
+
+.calendar-day.empty {
+  background: var(--light);
+}
+
+.calendar-date {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.calendar-events {
+  min-height: 60px;
+}
+
+.calendar-event {
+  background: var(--primary-light);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-event.tech {
+  background: #4361ee;
+}
+
+.calendar-event.sports {
+  background: #f8961e;
+}
+
+.calendar-event.cultural {
+  background: #f72585;
+}
+
+.calendar-event.opportunities {
+  background: #4cc9f0;
+}
+
+/* Today highlight */
+.calendar-day.today .calendar-date {
+  background: var(--primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Calendar */
+@media (max-width: 768px) {
+  .calendar-grid {
+      grid-template-columns: repeat(7, 1fr);
+      font-size: 0.8rem;
+  }
+  
+  .calendar-day {
+      min-height: 80px;
+      padding: 0.5rem;
+  }
+  
+  .calendar-event {
+      font-size: 0.6rem;
+      padding: 0.1rem 0.3rem;
+  }
+  
+  .countdown-timer {
+      gap: 1rem;
+  }
+  
+  .countdown-number {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-day {
+      min-height: 60px;
+      padding: 0.3rem;
+  }
+  
+  .calendar-date {
+      font-size: 0.8rem;
+  }
+  
+  .calendar-event {
+      display: none; /* Hide events on very small screens */
+  }
+  
+  .calendar-event:first-child {
+      display: block; /* Show only first event */
+  }
+}

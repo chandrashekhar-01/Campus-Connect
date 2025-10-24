@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect - Smart Communication Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/charts.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-university"></i>
+                    <h1>Campus Connect</h1>
+                </div>
+                <div class="nav-controls">
+                    <nav class="main-nav">
+                        <a href="#dashboard" class="nav-link active">Dashboard</a>
+                        <a href="#idea-board" class="nav-link">Ideas</a>
+                        <a href="#resources" class="nav-link">Resources</a>
+                        <a href="#calendar" class="nav-link">Calendar</a>
+                        <a href="analytics.html" class="nav-link">Analytics</a>
+                    </nav>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header" id="dashboard">
+                <div class="dashboard-title">
+                    <h2>Campus Bulletin</h2>
+                    <p>Stay updated with all campus activities and announcements</p>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search posts...">
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section" id="statsSection">
+                <!-- Stats will be dynamically inserted here -->
+            </div>
+
+            <!-- Category Filters -->
+            <div class="filters" id="filtersContainer">
+                <!-- Filters will be dynamically inserted here -->
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="posts-grid" id="postsContainer">
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+
+            <!-- Idea Board Section -->
+            <section class="idea-board" id="idea-board">
+                <div class="section-header">
+                    <h2>💡 Campus Idea Board</h2>
+                    <p>Share your ideas and vote on campus improvements</p>
+                </div>
+                <div class="idea-actions">
+                    <button class="btn btn-primary" id="addIdeaBtn">
+                        <i class="fas fa-plus"></i> Submit Idea
+                    </button>
+                </div>
+                <div class="ideas-container" id="ideasContainer">
+                    <!-- Ideas will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Resource Exchange Section -->
+            <section class="resource-exchange" id="resources">
+                <div class="section-header">
+                    <h2>🔄 Resource Exchange</h2>
+                    <p>Share and borrow resources with fellow students</p>
+                </div>
+                <div class="resource-actions">
+                    <button class="btn btn-primary" id="addResourceBtn">
+                        <i class="fas fa-plus"></i> Add Resource
+                    </button>
+                </div>
+                <div class="resource-grid" id="resourcesContainer">
+                    <!-- Resources will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section class="calendar-section" id="calendar">
+                <div class="section-header">
+                    <h2>📅 Upcoming Events Calendar</h2>
+                    <p>Never miss an important campus event</p>
+                </div>
+                <div class="countdown-timer" id="countdownTimer">
+                    <!-- Countdown to next event will appear here -->
+                </div>
+                <div class="calendar-view">
+                    <div class="calendar-header">
+                        <h3 id="currentMonth">October 2023</h3>
+                        <div class="calendar-nav">
+                            <button class="btn btn-secondary" id="prevMonth">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn btn-secondary" id="nextMonth">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Post Button -->
+    <button class="add-post-btn" id="addPostBtn">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Add Post Modal -->
+    <div class="modal" id="addPostModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Post</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="postForm">
+                    <div class="form-group">
+                        <label for="postTitle">Title</label>
+                        <input type="text" id="postTitle" class="form-control" placeholder="Enter post title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postCategory">Category</label>
+                        <select id="postCategory" class="form-control" required>
+                            <option value="">Select a category</option>
+                            <option value="tech">Tech Events</option>
+                            <option value="sports">Sports</option>
+                            <option value="cultural">Cultural Activities</option>
+                            <option value="announcements">Announcements</option>
+                            <option value="lost">Lost & Found</option>
+                            <option value="opportunities">Opportunities</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postDescription">Description</label>
+                        <textarea id="postDescription" class="form-control" rows="4" placeholder="Enter post description" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelPost">Cancel</button>
+                <button class="btn btn-primary" id="submitPost">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Idea Modal -->
+    <div class="modal" id="addIdeaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Submit New Idea</h3>
+                <button class="close-modal" id="closeIdeaModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="ideaForm">
+                    <div class="form-group">
+                        <label for="ideaTitle">Idea Title</label>
+                        <input type="text" id="ideaTitle" class="form-control" placeholder="Enter your idea title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaCategory">Category</label>
+                        <select id="ideaCategory" class="form-control" required>
+                            <option value="">Select a category</option>
+                            <option value="campus">Campus Improvement</option>
+                            <option value="events">Events & Activities</option>
+                            <option value="academic">Academic</option>
+                            <option value="facilities">Facilities</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaDescription">Description</label>
+                        <textarea id="ideaDescription" class="form-control" rows="4" placeholder="Describe your idea in detail" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaAuthor">Your Name (Optional)</label>
+                        <input type="text" id="ideaAuthor" class="form-control" placeholder="Enter your name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelIdea">Cancel</button>
+                <button class="btn btn-primary" id="submitIdea">Submit Idea</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Resource Modal -->
+    <div class="modal" id="addResourceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Resource</h3>
+                <button class="close-modal" id="closeResourceModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="resourceForm">
+                    <div class="form-group">
+                        <label for="resourceTitle">Resource Title</label>
+                        <input type="text" id="resourceTitle" class="form-control" placeholder="Enter resource title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceType">Resource Type</label>
+                        <select id="resourceType" class="form-control" required>
+                            <option value="">Select type</option>
+                            <option value="book">Book/Textbook</option>
+                            <option value="tool">Tool/Equipment</option>
+                            <option value="tutoring">Tutoring/Help</option>
+                            <option value="notes">Study Notes</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceDescription">Description</label>
+                        <textarea id="resourceDescription" class="form-control" rows="4" placeholder="Describe the resource" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceContact">Contact Info</label>
+                        <input type="text" id="resourceContact" class="form-control" placeholder="Email or phone" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelResource">Cancel</button>
+                <button class="btn btn-primary" id="submitResource">Add Resource</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Modal -->
+    <div class="modal" id="eventDetailsModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3 id="eventModalTitle">Event Details</h3>
+                <button class="close-modal" id="closeEventModal">&times;</button>
+            </div>
+            <div class="modal-body" id="eventModalBody">
+                <!-- Event details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Campus Connect</h3>
+                    <p>A smart communication hub for college students to stay updated with campus events, announcements, and activities.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p>Events Calendar</p>
+                    <p>Campus Clubs</p>
+                    <p>Student Resources</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: griet.connect@campus.edu</p>
+                    <p>Phone: 9110797101</p>
+                    <p>DS DEPARTMENT (CSBS) - BLOCK 2, 2108 - GRIET</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Campus Connect. All rights reserved. | Usability Design Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script>
+        // Inline basic calendar functionality to ensure it works
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple calendar implementation
+            const calendarGrid = document.getElementById('calendarGrid');
+            const currentMonthElement = document.getElementById('currentMonth');
+            const prevMonthBtn = document.getElementById('prevMonth');
+            const nextMonthBtn = document.getElementById('nextMonth');
+            
+            let currentDate = new Date();
+            
+            function renderCalendar() {
+                const year = currentDate.getFullYear();
+                const month = currentDate.getMonth();
+                
+                // Update month display
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"];
+                currentMonthElement.textContent = `${monthNames[month]} ${year}`;
+                
+                // Get first day of month and number of days
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                
+                // Clear calendar
+                calendarGrid.innerHTML = '';
+                
+                // Add day headers
+                const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                dayNames.forEach(day => {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day header';
+                    dayElement.textContent = day;
+                    calendarGrid.appendChild(dayElement);
+                });
+                
+                // Add empty cells for days before the first day
+                for (let i = 0; i < firstDay.getDay(); i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day empty';
+                    calendarGrid.appendChild(emptyDay);
+                }
+                
+                // Add days of the month
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    
+                    const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    
+                    dayElement.innerHTML = `
+                        <div class="calendar-date">${day}</div>
+                        <div class="calendar-events" id="events-${dateString}">
+                            <!-- Events will be added here -->
+                        </div>
+                    `;
+                    
+                    calendarGrid.appendChild(dayElement);
+                }
+                
+                // Add sample events to the calendar
+                addSampleEvents();
+            }
+            
+            function addSampleEvents() {
+                // Sample events data
+                const sampleEvents = [
+                    { date: '2023-10-15', title: 'Tech Fest', type: 'tech' },
+                    { date: '2023-10-18', title: 'Basketball', type: 'sports' },
+                    { date: '2023-10-20', title: 'Cultural Night', type: 'cultural' },
+                    { date: '2023-10-25', title: 'Internship Fair', type: 'opportunities' }
+                ];
+                
+                sampleEvents.forEach(event => {
+                    const eventElement = document.getElementById(`events-${event.date}`);
+                    if (eventElement) {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = `calendar-event ${event.type}`;
+                        eventDiv.textContent = event.title;
+                        eventDiv.onclick = () => showEventDetails(event);
+                        eventElement.appendChild(eventDiv);
+                    }
+                });
+            }
+            
+            function showEventDetails(event) {
+                // Simple event details display
+                alert(`Event: ${event.title}\nDate: ${event.date}\nType: ${event.type}`);
+            }
+            
+            // Navigation
+            prevMonthBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+            
+            nextMonthBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+            
+            // Initial render
+            renderCalendar();
+            
+            // Add countdown timer for next event
+            updateCountdownTimer();
+            
+            function updateCountdownTimer() {
+                const countdownElement = document.getElementById('countdownTimer');
+                const nextEventDate = new Date('2023-10-15'); // Sample next event
+                const now = new Date();
+                const diffTime = nextEventDate - now;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                if (diffDays > 0) {
+                    countdownElement.innerHTML = `
+                        <div class="countdown-card">
+                            <h4>Next Event Countdown</h4>
+                            <div class="countdown-timer">
+                                <div class="countdown-item">
+                                    <span class="countdown-number">${diffDays}</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number">${Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                            </div>
+                            <p class="countdown-event">Annual Tech Fest 2023</p>
+                        </div>
+                    `;
+                } else {
+                    countdownElement.innerHTML = `
+                        <div class="countdown-card">
+                            <h4>No Upcoming Events</h4>
+                            <p>Check back later for new events!</p>
+                        </div>
+                    `;
+                }
+            }
+        });
+    </script>
+
+    <script src="data/sampleData.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/polls.js"></script>
+    <script src="js/volunteers.js"></script>
+    <script src="js/ideas.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

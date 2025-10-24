@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Campus Connect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/charts.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-university"></i>
+                        <h1>Campus Connect</h1>
+                    </a>
+                </div>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Details -->
+    <main class="main-content">
+        <div class="container">
+            <div class="back-nav">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+
+            <div class="event-detail-container" id="eventDetailContainer">
+                <!-- Event details will be loaded here -->
+            </div>
+
+            <!-- Event Analytics -->
+            <div class="analytics-section">
+                <h2>Event Analytics</h2>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Attendance Progress</h3>
+                        <canvas id="attendanceChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Volunteer Roles</h3>
+                        <canvas id="volunteerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poll Section -->
+            <div class="poll-section" id="pollSection">
+                <!-- Poll will be loaded here if exists -->
+            </div>
+        </div>
+    </main>
+
+    <script src="data/sampleData.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/polls.js"></script>
+    <script src="js/volunteers.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/event-details.js"></script>
+</body>
+</html>
