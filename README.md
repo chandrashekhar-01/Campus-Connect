@@ -18,35 +18,37 @@ It enables students, faculty, and organizers to seamlessly discover, participate
 
 ## 🧱 Folder Structure
 
-## 🧱 Folder Structure
+```bash
 Campus Connect/
 │
-├── index.html # Home / Dashboard
-├── event-details.html # Event detail page
-├── analytics.html # Analytics dashboard
+├── index.html               # Main dashboard / homepage
+├── event-details.html       # Detailed event page
+├── analytics.html           # Event analytics dashboard
 │
 ├── css/
-│ ├── style.css # Core styling
-│ ├── responsive.css # Responsive layout rules
-│ └── charts.css # Chart visuals
+│   ├── style.css            # Core styles
+│   ├── responsive.css       # Media queries for mobile/tablet
+│   └── charts.css           # Styles for analytics visuals
 │
 ├── js/
-│ ├── app.js # Entry script / initializer
-│ ├── events.js # Event listing logic
-│ ├── event-details.js # Event detail rendering
-│ ├── volunteers.js # Volunteer module
-│ ├── polls.js # Poll creation and voting
-│ ├── ideas.js # Idea sharing logic
-│ ├── analytics.js # Chart data + dashboard
-│ ├── charts.js # Chart rendering utilities
-│ ├── ui.js # UI interactions and effects
-│ ├── utils.js # Helper functions
-│ └── calendar.js # Calendar-related logic
+│   ├── app.js               # Main app initialization
+│   ├── analytics.js         # Data visualization & chart logic
+│   ├── charts.js            # Chart utilities
+│   ├── events.js            # Event listing & management
+│   ├── event-details.js     # Individual event details handling
+│   ├── volunteers.js        # Volunteer data logic
+│   ├── polls.js             # Poll creation and voting
+│   ├── ideas.js             # Idea sharing module
+│   ├── calendar.js          # Calendar view or date logic
+│   ├── ui.js                # UI elements and dynamic behaviors
+│   ├── utils.js             # Helper functions
+│   └── app.js               # Root script for orchestration
 │
 ├── data/
-│ └── sampleData.js # Mock event / analytics data
+│   └── sampleData.js        # Mock data for events & analytics
 │
-└── README.md
+└── README.md                # Project documentation
+
 # Clone the repository
 git clone https://github.com/<your-username>/Campus-Connect.git
 
